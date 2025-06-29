@@ -34,7 +34,7 @@ jobs:
 
     - name: Update kubeconfig
       run: |
-        aws eks update-kubeconfig --name demo-cluster --region us-east-1   
+        aws eks update-kubeconfig --name demo-nodeport --region us-east-1   
 
     - name: Upgrade WordPress with new version
       run: |
