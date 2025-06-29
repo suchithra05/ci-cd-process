@@ -34,7 +34,12 @@ jobs:
 
     - name: Update kubeconfig
       run: |
-        aws eks update-kubeconfig --name demo-nodeport --region us-east-1   
+        aws eks update-kubeconfig --name demo-nodeport --region us-east-1
+
+    - name: Add Bitnami Helm repository
+      run: |
+        helm repo add bitnami https://charts.bitnami.com/bitnami
+        helm repo update   
 
     - name: Upgrade WordPress with new version
       run: |
