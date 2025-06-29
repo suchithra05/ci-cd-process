@@ -1,0 +1,17 @@
+service:
+  type: NodePort
+
+image:
+  repository: bitnami/wordpress
+  tag: 6.8.2  # Replace with the version you want to upgrade to
+
+mariadb:
+  enabled: true
+  auth:
+    rootPassword: secretpassword
+  primary:
+    persistence:
+      enabled: false
+
+persistence:
+  enabled: false

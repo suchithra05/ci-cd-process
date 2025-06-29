@@ -43,9 +43,6 @@ jobs:
 
     - name: Upgrade WordPress with new version
       run: |
-        helm upgrade my-wordpress bitnami/wordpress \
-          --set service.type=NodePort \
-          --set image.repository=bitnami/wordpress \
-          --set image.tag=${{ steps.read_version.outputs.version }}
-          --set mariadb.primary.persistence.enabled=false \
-          --set persistence.enabled=false
+        helm repo add bitnami https://charts.bitnami.com/bitnami
+        helm repo update
+        helm upgrade my-wordpress bitnami/wordpress -f values.yaml
