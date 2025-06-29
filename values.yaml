@@ -3,7 +3,7 @@ service:
 
 image:
   repository: bitnami/wordpress
-  tag: 6.8.2  # Replace with the version you want to upgrade to
+  tag: 6.5.5-debian-11-r0  # Replace with the version you want to upgrade to
 
 mariadb:
   enabled: true
