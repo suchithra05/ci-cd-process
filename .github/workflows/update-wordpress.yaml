@@ -45,6 +45,7 @@ jobs:
       run: |
         helm upgrade my-wordpress bitnami/wordpress \
           --set service.type=NodePort \
-          --set image.tag=${{ steps.read_version.outputs.version }} \
+          --set image.repository=bitnami/wordpress \
+          --set image.tag=${{ steps.read_version.outputs.version }}
           --set mariadb.primary.persistence.enabled=false \
           --set persistence.enabled=false
