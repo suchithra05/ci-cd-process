@@ -2,9 +2,8 @@ name: Update WordPress Version on EKS
 
 on:
   push:
-    branches: [main]
-    paths:
-      - values.txt
+    branches:
+      - main
 
 jobs:
   upgrade:
